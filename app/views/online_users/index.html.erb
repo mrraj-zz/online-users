@@ -1,0 +1,11 @@
+<% if user_signed_in? %>
+  currently logged in as <%= current_user.email %>
+  <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
+<% end %>
+
+<h1>Online Users List</h1>
+<ul>
+  <% @online_users.each do |online_user| %>
+    <li><%= online_user.email %></li>
+  <% end %>
+</ul>
